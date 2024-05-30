@@ -6,18 +6,26 @@ import {getCoins} from "./api/api.js";
 function App() {
     const [balance, setBalance] = useState(5000);
     const [coins, setCoins] = useState([]);
+    const [filteredCoins, setFilteredCoins] = useState([]);
 
     useEffect(() => {
         const fetchData = async () => {
             const data = await getCoins();
-            setCoins(data.coins)
+            setCoins(data.coins);
+            setFilteredCoins(data.coins)
         }
         fetchData();
     }, [])
 
     return <>
         <Header />
-        <Main coins={coins} balance={balance} setBalance={setBalance} />
+        <Main
+            coins={coins}
+            setCoins={setFilteredCoins}
+            filteredCoins={filteredCoins}
+            balance={balance}
+            setBalance={setBalance}
+        />
     </>
 }
 
