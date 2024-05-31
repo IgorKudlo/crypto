@@ -3,12 +3,12 @@ import Card from "../../components/Card/Card.jsx";
 import CoinsList from "../../components/CoinsList/CoinsList.jsx";
 import FilterBlock from "../../components/FilterBlock/FilterBlock.jsx";
 
-const Main = ({ balance, setBalance, coins, setCoins, filteredCoins, }) => {
+const Main = ({ balance, setBalance, coins, setCoins }) => {
     return (
         <main className={styles.main}>
             <Card balance={balance} setBalance={setBalance} />
-            <FilterBlock coins={coins} setCoins={setCoins} />
-            {coins.length > 0 ? <CoinsList coins={filteredCoins} /> : <div>Loading...</div>}
+            <FilterBlock setCoins={setCoins} />
+            {coins.length > 0 ? <CoinsList /> : <div>Loading...</div>}
         </main>
     );
 };

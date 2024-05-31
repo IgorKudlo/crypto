@@ -1,7 +1,9 @@
 import './styles.css'
-import {useEffect, useState, memo} from "react";
+import { useEffect, useState, memo, useContext } from "react";
+import { CoinsContext } from "../../context/coinsContext.jsx";
 
-const FilterBlock = ({coins, setCoins}) => {
+const FilterBlock = ({ setCoins }) => {
+    const {coins} = useContext(CoinsContext);
     const [value, setValue] = useState('');
 
     useEffect(() => {
