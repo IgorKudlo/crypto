@@ -7,7 +7,7 @@ const Main = ({ balance, setBalance, coins, setCoins }) => {
     return (
         <main className={styles.main}>
             <Card balance={balance} setBalance={setBalance} />
-            <FilterBlock setCoins={setCoins} />
+            <FilterBlock coins={coins} setCoins={setCoins} />
             {coins.length > 0 ? <CoinsList /> : <div>Loading...</div>}
         </main>
     );
